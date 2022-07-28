@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+$White: hsl(0, 0%, 100%);
+$Light-gray: hsl(212, 45%, 89%);
+$Grayish-blue: hsl(220, 15%, 55%);
+$Dark-blue: hsl(218, 44%, 22%);
+
+@mixin borders {
+  border-radius: 1rem;
+}
+
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: $Light-gray;
+  main {
+    min-height: 95vh;
+    @include flexCenter();
+
+    .card {
+      @include borders();
+      @include flexCenter();
+      background-color: $White;
+      margin: 0 auto;
+      max-width: 20rem;
+      height: auto;
+      .image {
+        @include borders();
+        margin: 1rem;
+        background-image: url(images/image-qr-code.png);
+        background-position: center;
+        background-size: cover;
+        height: 18.5rem;
+        width: 18.5rem;
+      }
+    }
+    h2 {
+      color: $Dark-blue;
+      margin: 0;
+      max-width: 18rem;
+      text-align: center;
+    }
+
+    p {
+      margin: 1rem 0 2rem;
+      padding: 0 2rem;
+      max-width: 18rem;
+      text-align: center;
+      color: $Grayish-blue;
+    }
+  }
+  footer {
+    text-align: center;
+    a {
+      transition: 150ms color linear;
+
+      &:hover {
+        color: $Dark-blue;
+      }
+    }
+  }
+}
